@@ -48,11 +48,11 @@ class EmotionClassifier(nn.Module):
 # Load the model
 num_classes = len(emotions)
 model = EmotionClassifier(num_classes, max_length)
-model.load_state_dict(torch.load('C:/Users/green/Desktop/my code AI/CNNmodel11.pt'))
+model.load_state_dict(torch.load('C:/Users/green/Desktop/my code AI/CNNmodelexec.pt'))
 model.eval()
 
 # Example usage for prediction
-file_path = 'mhappy.wav'
+file_path = 'audio-4.wav'
 features = extract_features(file_path, max_length)
 if features is not None:
     features = torch.tensor(features, dtype=torch.float32).unsqueeze(0)  # Add batch dimension

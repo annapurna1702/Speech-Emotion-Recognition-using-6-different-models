@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report
 import os
 
 # Load the decision tree model saved as a .pt file
-model_path = "C:/Users/green/Desktop/my code AI/DT11model.pt"
+model_path = "C:/Users/green/Desktop/my code AI/DTexecmodel.pt"
 decision_tree_model = decision_tree_model = torch.load(model_path)  # Load thejoblib.load(model_path) scikit-learn model using joblib
 
 # Define emotions
@@ -25,17 +25,20 @@ def extract_features(file_path):
 
 # Load data and extract features (you can reuse your existing code)
 X, y = [], []
-for emotion in emotions:
-    for file in os.listdir(f"audiosets/{emotion}"):
-        if file.endswith(".wav"):
-            features = extract_features(os.path.join("audiosets", emotion, file))
-            if features is not None:
-                X.append(features)
-                y.append(emotion)
+for file in os.listdir("audiosets"):
+    if file.endswith(".wav"):
+        emotion = file.split("_")[0]  # Extract emotion label from file name
+        features = extract_features(os.path.join("audiosets", file))
+        if features is not None:
+            X.append(features)
+            y.append(emotion)
+X = np.array(X)
+y = np.array(y)
+
 
 
 # Define the path to the audio file you want to test
-test_audio_file = "audio-4.wav"
+test_audio_file = "sad1111.wav"
 
 # Extract features from the test audio file
 test_features = extract_features(test_audio_file)
