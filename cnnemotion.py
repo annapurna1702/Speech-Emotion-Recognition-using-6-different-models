@@ -48,7 +48,7 @@ def extract_features(file_path, max_length=100):
         return None
 
 # Example usage:
-test_audio_file = "sad1111.wav"  # Replace with your test audio file
+test_audio_file = "1001_DFA_SAD_XX.wav"  # Replace with your test audio file
 features = extract_features(test_audio_file)
 if features is not None:
     features_tensor = torch.tensor(features, dtype=torch.float32)

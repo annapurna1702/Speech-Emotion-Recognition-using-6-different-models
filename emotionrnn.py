@@ -66,7 +66,7 @@ label_encoder = LabelEncoder()
 label_encoder.fit(emotions)
 
 # Load a random .wav audio file and extract features
-audio_file_path = 'videoplayback Ringtone [vocals].wav'  # Replace with the path to your audio file
+audio_file_path = '1001_DFA_SAD_XX.wav'  # Replace with the path to your audio file
 features = extract_features(audio_file_path, max_length=100)
 
 if features is not None:

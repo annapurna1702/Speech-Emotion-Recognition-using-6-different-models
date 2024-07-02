@@ -71,7 +71,7 @@ def predict_emotion(audio_file_path, model, max_length=100):
         return None
 
 # Example usage for inference
-audio_file_path = 'videoplayback Ringtone [vocals].wav'  # Replace with your audio file path
+audio_file_path = '1001_DFA_SAD_XX.wav'  # Replace with your audio file path
 predicted_emotion = predict_emotion(audio_file_path, model, max_length)
 if predicted_emotion:
     print(f'Predicted Emotion: {predicted_emotion}')
